@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MyMovie — Search & Discover</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">
+  <img src="logo.jpg" alt="MyMovie Logo" class="logo-img" />
+  MyMovie
+</div>
+    <nav>
+      <a href="index.html" class="active">Search & Discover</a>
+      <a href="watchlist.html">My Watchlist</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- SEARCH & FILTER SECTION -->
+    <section class="card">
+      <h2> Discover Movies</h2>
+      <p class="hint">Search by title or select a genre below</p>
+      <div class="search-row">
+        <input id="searchInput" type="text" placeholder="Enter movie title ..." />
+        
+                <select id="genreSelect">
+          <option value="">All Genres</option>
+          <option value="28">Action</option>
+          <option value="35">Comedy</option>
+          <option value="27">Horror</option>
+          <option value="10749">Romance</option>
+        </select>
+        
+        <button id="searchBtn" class="btn primary">Search</button>
+      </div>
+      <div id="status" class="status"></div>
+    </section>
+
+    <!-- MOVIE GRID (POPULAR / BY GENRE) -->
+    <section class="card">
+      <h2 id="gridTitle"> Popular Right Now </h2>
+      <div id="movieGrid" class="movie-grid">
+        <!-- Grid items injected here -->
+      </div>
+    </section>
+
+    <!-- MOVIE RESULT DETAILS -->
+    <section id="resultCard" class="card hidden">
+      <div class="movie-result">
+        <img id="poster" src="https://via.placeholder.com/200x300?text=No+Poster" alt="Poster" />
+        <div class="movie-info">
+          <h2 id="movieTitle">Title</h2>
+          <p><strong>Release Date:</strong> <span id="movieYear"></span></p>
+          <p><strong>Rating:</strong> ⭐ <span id="movieRating"></span> / 10</p>
+          <p><strong>Runtime:</strong> <span id="movieRuntime"></span> mins</p>
+          <p><strong>Overview:</strong> <span id="moviePlot"></span></p>
+        </div>
+      </div>
+
+      <!-- Suggestion Logic -->
+      <div class="suggest-box">
+        <h3> Smart Suggestion</h3>
+        <p id="suggestion"></p>
+      </div>
+
+      <!-- Calculation Logic -->
+      <div class="calc-box">
+        <h3> Watch Time Calculator</h3>
+        <label>How many times will you watch this? 
+          <input id="watchCount" type="number" min="1" value="1" />
+        </label>
+        <button id="calcBtn" class="btn secondary">Calculate</button>
+        <p id="calcResult"></p>
+      </div>
+
+      <div class="action-row">
+        <button id="addBtn" class="btn primary">➕ Add to Watchlist</button>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="index.js"></script>
+</body>
+</html>
